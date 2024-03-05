@@ -1,10 +1,7 @@
-import express from 'express'
+import 'dotenv/config'
 
-const PORT = 3000
-const app = express()
+import app from './app'
 
-app.use(express.json())
+const port = process.env.PORT
 
-app.listen(PORT, () => {
-    console.log(`Backend executando na porta ${PORT}!`)
-})
+app.listen(port, () => console.log(`Backend executando na porta ${port}!`))

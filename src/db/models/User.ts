@@ -1,7 +1,10 @@
-import { Sequelize, DataTypes } from 'sequelize'
-import db from '../database/db'
 
-const User = db.define("User", {
+import { Model, DataTypes } from "sequelize";
+import { sequelize } from '../config/database'
+
+class User extends Model {}
+
+User.init({
     id: {
         type: DataTypes.INTEGER, 
         primaryKey: true, 
@@ -19,6 +22,10 @@ const User = db.define("User", {
         type: DataTypes.STRING,
         allowNull: false,
     },
+}, {
+    tableName: 'users', 
+    timestamps: false, 
+    sequelize
 })
 
-module.exports = User
+export default User
