@@ -1,6 +1,7 @@
+import { Request, Response } from 'express'
 import User from "../db/models/User"
 
-const createUserController = async (req: any, res: any) => {
+const createUserController = async (req: Request, res: Response) => {
     try {
         const { name, email, age } = req.body
 
@@ -19,7 +20,6 @@ const createUserController = async (req: any, res: any) => {
         const userCreated = await User.create({ name, email, age })
         return res.status(201).send('Usuário criado com sucesso!')
     } catch (error) {
-        console.error(error)
         return res.status(500).send('Ocorreu um erro ao criar o usuário.')
     }
 }
