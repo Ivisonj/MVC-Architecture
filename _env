@@ -1,0 +1,5 @@
+USERNAME_DB = userNameDoPostgres
+PASSWORD_DB = senhaDoPostgres
+DATABASE_DB = nomeParaoBanco
+HOST_DB = 'localhost'
+PORT = '3000'
